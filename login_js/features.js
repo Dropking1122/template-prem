@@ -30,9 +30,11 @@ document.addEventListener('DOMContentLoaded', function () {
 function initSplash() {
   var splash = document.getElementById('splashScreen');
   if (!splash) return;
+  var params = new URLSearchParams(window.location.search);
+  var delay = params.get('nosplash') ? 0 : 2000;
   setTimeout(function () {
     splash.classList.add('hide');
-  }, 2000);
+  }, delay);
 }
 
 /* ===== COUNTDOWN TIMER ===== */

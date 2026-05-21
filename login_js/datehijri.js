@@ -22,7 +22,7 @@ setInterval(function() {
       {
          seconds = '0' + waktu.getSeconds();
       }
-      jam.innerHTML  = '<span>' + hours + ' : </span>'
+      if (jam) jam.innerHTML  = '<span>' + hours + ' : </span>'
                      + '<span>' + minutes + ' : </span>'
                      + '<span>' + seconds +' </span>';
 
@@ -98,12 +98,12 @@ var y = tod.getFullYear();
 var m = tod.getMonth();
 var d = tod.getDate();
 var dow = tod.getDay();
-tglMasehi.textContent = weekday[dow] + " " + d + " " + monthname[m] + " " + y + " M"
+if (tglMasehi) tglMasehi.textContent = weekday[dow] + " " + d + " " + monthname[m] + " " + y + " M"
 // document.write(weekday[dow] + " " + d + " " + monthname[m] + " " + y);
 m++;
 fixd=gregToFixed(y, m, d);
 var h=new Hijri(1421, 11, 28);
 h = fixedToHijri(fixd);
 
-tglHijriyah.textContent =h.toString() + " H";
+if (tglHijriyah) tglHijriyah.textContent = h.toString() + " H";
 // document.write(" Masehi | " + h.toString() + " Hijriah &nbsp;&nbsp;");
