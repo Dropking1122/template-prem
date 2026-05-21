@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title">Login</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="login_js/datehijri.js"></script>
+  </head>
+  <body>
+    <div class="max-w-md mx-auto pb-10">
+      <!-- Header - Now with sticky positioning -->
+      <header id="sticky-header" class="sticky-header">
+        <div class="header-content">
+          <!-- Logo -->
+          <div class="logo-container">
+            <div class="logo">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-6 w-6 mr-2"
+              >
+                <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+              </svg>
+              <span class="logo-text">REVD.CLOUD</span>
+            </div>
+            <button type="button" class="notification-btn" onclick="showSocial()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-bell"
+              >
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+              <div class="notification-badge">1</div>
+            </button>
+          </div>
+
+          <!-- Date and Time -->
+          <div class="datetime-container">
+            <div class="date-block">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="calendar-icon"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <div class="date-content">
+                <div id="tglMasehi" class="date-text"></div>
+                <div id="tglHijriyah" class="date-text"></div>
+              </div>
+            </div>
+
+            <div class="time-block">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="clock-icon"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <div id="jam" class="time-text"></div>
+            </div>
+          </div>
+          
+          <!-- Pricing Cards -->
+          <div class="pricing-container">
+            <!-- Bronze Package -->
+            <div class="pricing-card">
+              <div class="pricing-header bronze">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="pricing-icon"
+                >
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                  <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                  <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                  <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+                <span>Bronze</span>
+              </div>
+              <div class="pricing-price">Rp. 3000,-</div>
+              <div class="pricing-period">4 Jam</div>
+            </div>
+            
+            <!-- Silver Package -->
+            <div class="pricing-card">
+              <div class="pricing-header silver">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="pricing-icon"
+                >
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                  <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                  <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                  <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+                <span>Silver</span>
+              </div>
+              <div class="pricing-price">Rp. 5.000,-</div>
+              <div class="pricing-period">24 Jam</div>
+            </div>
+            
+            <!-- Gold Package -->
+            <div class="pricing-card">
+              <div class="pricing-header gold">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="pricing-icon"
+                >
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                  <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                  <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                  <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+                <span>Gold</span>
+              </div>
+              <div class="pricing-price">Rp. 50.000,-</div>
+              <div class="pricing-period">Bulanan</div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- End Header -->
+
+      <div class="main-content">
+        <!-- Voucher Form -->
+        <div class="voucher-form">
+          $(if chap-id)
+          <form
+            autocomplete="off"
+            name="loginvoucher"
+            action="$(link-login-only)"
+            method="post"
+            $(if chap-id)
+            onSubmit="return doLogin()"
+            $(endif)
+          >
+            <div class="form-input-group">
+              <input
+                type="text"
+                name="username"
+                required
+                placeholder="Masukkan Voucher"
+                id="kodeVoucher"
+                class="form-input"
+              />
+              <input type="hidden" name="password" id="password" />
+              <button
+                type="submit"
+                class="submit-btn"
+              >
+                Masuk
+              </button>
+            </div>
+            $(if error)
+            <span class="error-text">$(error)</span>
+            $(endif)
+          </form>
+
+          <script src="/md5.js"></script>
+          <script type="text/javascript">
+            function doLogin() {
+              document.loginvoucher.username.value = document.login.username.value;
+              document.loginvoucher.password.value = hexMD5("$(chap-id)" + document.login.password.value + "$(chap-challenge)");
+              document.loginvoucher.submit();
+              return false;
+            }
+          </script>
+          $(endif)
+        </div>
+        <!-- End Voucher Form -->
+
+        <div class="section-title">
+          <h2>Cara Login lainnya?</h2>
+        </div>
+
+        <!-- Login Options - App-like buttons instead of carousel -->
+        <div class="app-button-grid">
+          <button class="app-button" onclick="showMember()">
+            <div class="app-button-icon">
+              <img src="img/group.png" alt="Member" />
+            </div>
+            <div class="app-button-label">
+              Member
+            </div>
+          </button>
+
+          $(if trial == 'yes')
+          <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" class="app-button">
+            <div class="app-button-icon">
+              <img src="img/unlocked.png" alt="Trial" />
+            </div>
+            <div class="app-button-label">
+              Gratis<br>Uji Coba
+            </div>
+          </a>
+          $(endif)
+
+          <a href="https://laksa19.github.io/myqr" class="app-button">
+            <div class="app-button-icon">
+              <img src="img/qr-code.png" alt="QR Code" />
+            </div>
+            <div class="app-button-label">
+              Scan<br>QR Code
+            </div>
+          </a>
+        </div>
+        <!-- End Login Options -->
+
+        <div class="section-title">
+          <h2>Butuh bantuan? Hubungi kami</h2>
+        </div>
+
+        <!-- Help Options - App-like buttons instead of carousel -->
+        <div class="app-button-grid">
+          <button onclick="caraLogin()" class="app-button">
+            <div class="app-button-icon">
+              <img src="img/sign-up.png" alt="Login Help" />
+            </div>
+            <div class="app-button-label">
+              Cara<br>Login
+            </div>
+          </button>
+
+          <a href="https://wa.me/6288214672165?text=Saya%20Membutuhkan%20Bantuan%20Untuk%20Login" class="app-button">
+            <div class="app-button-icon">
+              <img src="img/whatsapp.png" alt="WhatsApp" />
+            </div>
+            <div class="app-button-label">
+              WhatsApp
+            </div>
+          </a>
+
+          <a href="https://t.me/ValltzID" class="app-button">
+            <div class="app-button-icon">
+              <img src="img/telegram.png" alt="Telegram" />
+            </div>
+            <div class="app-button-label">
+              Telegram
+            </div>
+          </a>
+        </div>
+        <!-- End Help Options -->
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <marquee class="footer-marquee">
+        untuk pembelian voucher dapat melalui
+        <b class="capitalize">Admin REVD.CLOUD</b>
+      </marquee>
+      <footer class="footer-copyright">
+        © Copyright 2024 |
+        <a href="https://www.instagram.com/revd.cloud" class="font-bold">REVD.CLOUD</a> -
+        All rights reserved
+      </footer>
+    </div>
+    <!-- End Footer -->
+
+    <!-- Login Instructions Modal -->
+    <div class="modal" id="caraLogin">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-icon">
+            <svg
+              class="modal-svg"
+              stroke="currentColor"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+              />
+            </svg>
+          </div>
+          <h3 class="modal-title">Cara Login</h3>
+        </div>
+        <div class="modal-body">
+          <p>
+            Pastikan kamu sudah membeli <b>voucher</b> atau sudah
+            menjadi <b>member</b>
+          </p>
+          
+          <h4 class="modal-subtitle">Sudah memiliki voucher?</h4>
+          <p>
+            Masukkan <b class="text-accent"><a href="#voucher">voucher</a></b>
+            yang kamu miliki lalu klik <b>masuk</b>
+          </p>
+          
+          <h4 class="modal-subtitle">Sudah menjadi member?</h4>
+          <ol class="modal-list">
+            <li>Klik <b>Login Member</b></li>
+            <li>
+              Masukkan <b>username</b> dan <b>password</b> yang kamu
+              miliki lalu klik <b>masuk</b>
+            </li>
+          </ol>
+        </div>
+        <div class="modal-footer">
+          <button onclick="caraLogin()" class="modal-button">
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- End Login Instructions Modal -->
+
+    <!-- Social Media Modal (replacing notification) -->
+    <div class="modal" id="social-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-icon">
+            <svg
+              class="modal-svg"
+              stroke="currentColor"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+              />
+            </svg>
+          </div>
+          <h3 class="modal-title">Social Media</h3>
+        </div>
+        <div class="modal-body social-links">
+          <a href="https://www.instagram.com/revd.cloud" class="social-button instagram">
+            <div class="social-icon">
+              <img src="img/instagram.png" alt="Instagram">
+            </div>
+            <span>Instagram</span>
+          </a>
+          
+          <a href="https://wa.me/6288214672165" class="social-button whatsapp">
+            <div class="social-icon">
+              <img src="img/whatsapp.png" alt="WhatsApp">
+            </div>
+            <span>WhatsApp</span>
+          </a>
+          
+          <a href="https://t.me/ValltzID" class="social-button telegram">
+            <div class="social-icon">
+              <img src="img/telegram.png" alt="Telegram">
+            </div>
+            <span>Telegram</span>
+          </a>
+        </div>
+        <div class="modal-footer">
+          <button onclick="showSocial()" class="modal-button">
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- End Social Media Modal -->
+
+    <!-- Member Login Modal -->
+    <div class="modal" id="member">
+      <div class="modal-content">
+        <div class="modal-header member-header">
+          <h1 class="member-title">Login Member</h1>
+        </div>
+        <div class="modal-body">
+          <form
+            autocomplete="off"
+            name="loginMember"
+            action="$(link-login-only)"
+            method="post"
+            $(if chap-id) onSubmit="return memberLogin()" $(endif)
+          >
+            <input
+              type="text"
+              name="username"
+              placeholder="Masukkan Username"
+              class="member-input"
+            />
+            <div class="password-input-group">
+              <input
+                type="password"
+                id="passwordMember"
+                name="password"
+                placeholder="Masukkan Password"
+                class="member-input"
+              />
+              <button
+                onclick="showPassword()"
+                type="button"
+                class="password-toggle-btn"
+              >
+                Lihat
+              </button>
+            </div>
+            $(if error)
+            <span class="error-text">$(error)</span>
+            $(endif)
+            <div class="member-actions">
+              <button
+                type="button"
+                class="cancel-btn"
+                onclick="showMember()"
+              >
+                Tutup
+              </button>
+              <button
+                type="submit"
+                class="login-btn"
+              >
+                Masuk
+              </button>
+            </div>
+            <div class="member-switch">
+              <p>
+                Memiliki Voucher?
+                <button
+                  onclick="loginWithVoucher()"
+                  type="button"
+                  class="voucher-link"
+                >
+                  Masukkan disini
+                </button>
+              </p>
+            </div>
+          </form>
+
+          <script type="text/javascript">
+            function memberLogin() {
+              document.loginMember.username.value = document.login.username.value;
+              document.loginMember.password.value = hexMD5("$(chap-id)" + document.login.password.value +"$(chap-challenge)");
+              document.loginMember.submit();
+              return false;
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+    <!-- End Member Login Modal -->
+
+    <script type="text/javascript" src="login_js/jquery.js"></script>
+    <script>window.MSInputMethodContext && document.documentMode && document.write('<script src="login_js/ie11CustomProperties.min.js"><\/script>');</script>
+    <script type="text/javascript" src="login_js/main.js"></script>
+    
+    <script>
+      // Function to handle scrolling and sticky header
+      window.addEventListener('scroll', function() {
+        const header = document.getElementById('sticky-header');
+        if (window.scrollY > 10) {
+          header.classList.add('sticky-active');
+        } else {
+          header.classList.remove('sticky-active');
+        }
+      });
+      
+      // Toggle modals
+      function caraLogin() {
+        const modal = document.getElementById('caraLogin');
+        modal.classList.toggle('show-modal');
+      }
+      
+      function showSocial() {
+        const modal = document.getElementById('social-modal');
+        modal.classList.toggle('show-modal');
+      }
+      
+      function showMember() {
+        const modal = document.getElementById('member');
+        modal.classList.toggle('show-modal');
+      }
+      
+      function showPassword() {
+        const passwordField = document.getElementById('passwordMember');
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+        } else {
+          passwordField.type = "password";
+        }
+      }
+      
+      function loginWithVoucher() {
+        showMember();
+        document.getElementById('kodeVoucher').focus();
+      }
+      
+      // Date and time functions
+      function updateDateTime() {
+        const now = new Date();
+        
+        // Format time
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        document.getElementById('jam').textContent = `${hours}:${minutes}:${seconds}`;
+        
+        // Format Gregorian date
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('tglMasehi').textContent = now.toLocaleDateString('id-ID', options);
+        
+        // Hijri date comes from external script (datehijri.js)
+        if (typeof getHijriDate === 'function') {
+          document.getElementById('tglHijriyah').textContent = getHijriDate();
+        }
+      }
+      
+      // Initialize and update date/time
+      updateDateTime();
+      setInterval(updateDateTime, 1000);
+    </script>
+  </body>
+</html>
