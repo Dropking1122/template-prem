@@ -5,7 +5,7 @@ function setpass() {
   var user = username.value
   password.value = user;
 }
-username.onchange = setpass;
+if (username) username.onchange = setpass;
 function showNotif() {
   document.getElementById('notification').classList.toggle('hidden')
 }
