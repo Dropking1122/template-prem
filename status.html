@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="css/status.css">
+    <link rel="stylesheet" href="css/features.css">
   </head>
   <body class="bg-gray-50">
     <div class="max-w-md mx-auto pb-10">
@@ -35,6 +36,8 @@
             </svg>
             <span class="font-bold">REVD.CLOUD</span>
           </div>
+          <div class="flex items-center gap-2">
+          <button id="darkModeToggle" onclick="toggleDarkMode()" title="Mode Gelap"></button>
           <form
             action="$(link-logout)"
             name="logout"
@@ -59,6 +62,7 @@
               </svg>
             </button>
           </form>
+          </div>
         </div>
 
         <!-- End Logo -->
@@ -132,6 +136,39 @@
       </div>
       <!-- End Header -->
       <div class="bg-white -mt-4 rounded-t-lg">
+
+        <!-- Countdown Timer -->
+        <div id="countdownCard" class="countdown-card">
+          <div class="countdown-label">&#9200; Sisa Waktu Koneksi</div>
+          <div class="countdown-display" id="countdownDisplay">--:--:--</div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" id="progressFill" style="--fill-pct:100%;width:var(--fill-pct)"></div>
+          </div>
+        </div>
+        <!-- End Countdown Timer -->
+
+        <!-- WA Alert Toast -->
+        <div id="waAlert">
+          <div class="wa-alert-box">
+            <div style="font-size:28px;">&#9888;&#65039;</div>
+            <div style="flex:1;">
+              <p style="font-size:12px;font-weight:700;color:#ea580c;margin:0;">Waktu hampir habis!</p>
+              <p style="font-size:11px;color:#6b7280;margin:2px 0 8px;">Kurang dari 10 menit tersisa. Perpanjang sekarang?</p>
+              <div style="display:flex;gap:8px;">
+                <a href="https://wa.me/6288214672165?text=Halo%20Admin%2C%20saya%20ingin%20memperpanjang%20koneksi." target="_blank"
+                   onclick="closeWaAlert()"
+                   style="background:#16a34a;color:white;font-size:11px;font-weight:700;padding:5px 12px;border-radius:8px;text-decoration:none;">
+                  Perpanjang via WA
+                </a>
+                <button onclick="closeWaAlert()" style="background:#e5e7eb;color:#374151;font-size:11px;font-weight:600;padding:5px 12px;border-radius:8px;border:none;cursor:pointer;">
+                  Nanti
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End WA Alert -->
+
         <!-- Status Info -->
         <div class="pt-5">
           <p class="text-center font-bold">Info Status</p>
@@ -159,12 +196,25 @@
               </tr>
               <!-- Traffic -->
               <tr>
-                <td class="p-2">
-                  <div class="font-medium text-gray-800">Upload/Download</div>
-                </td>
-                <td class="p-2">
-                  <div class="text-left font-medium text-green-500">
-                    $(bytes-in-nice) | $(bytes-out-nice)
+                <td class="p-2" colspan="2">
+                  <div class="font-medium text-gray-800 mb-2">Penggunaan Data</div>
+                  <div class="usage-bar-row">
+                    <div class="usage-bar-label">
+                      <span style="color:#3b82f6;">&#8679; Upload</span>
+                      <span id="usageUpload" style="color:#3b82f6;font-weight:700;">$(bytes-in-nice)</span>
+                    </div>
+                    <div class="usage-bar-track">
+                      <div class="usage-bar-fill upload" id="uploadFill" style="width:var(--fill-pct,0%)"></div>
+                    </div>
+                  </div>
+                  <div class="usage-bar-row">
+                    <div class="usage-bar-label">
+                      <span style="color:#10b981;">&#8681; Download</span>
+                      <span id="usageDownload" style="color:#10b981;font-weight:700;">$(bytes-out-nice)</span>
+                    </div>
+                    <div class="usage-bar-track">
+                      <div class="usage-bar-fill download" id="downloadFill" style="width:var(--fill-pct,0%)"></div>
+                    </div>
                   </div>
                 </td>
               </tr>
@@ -199,7 +249,7 @@
                 </td>
                 <td class="p-2">
                   <div class="text-left font-medium text-green-500">
-                    $(session-time-left)
+                    <span id="sessionTimeLeft">$(session-time-left)</span>
                   </div>
                 </td>
               </tr>
@@ -362,6 +412,7 @@
 
     <script type="text/javascript" src="login_js/main.js"></script>
     <script src="login_js/datehijri.js"></script>
+    <script type="text/javascript" src="login_js/features.js"></script>
     <script>window.MSInputMethodContext && document.documentMode && document.write('<script src="login_js/ie11CustomProperties.min.js"><\/script>');</script>
     <script>
       $("#owl-carousel").owlCarousel({

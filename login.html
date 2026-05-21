@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/features.css">
     <style type="text/css">
       body{
   background: url('img/textures.png');
@@ -16,6 +17,26 @@
     </style>
   </head>
   <body class="bg-gray-50">
+  <!-- Splash Screen -->
+  <div id="splashScreen">
+    <div class="splash-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+        <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+        <line x1="12" y1="20" x2="12.01" y2="20"></line>
+      </svg>
+    </div>
+    <p style="color:white;font-size:1.4rem;font-weight:800;margin-top:16px;letter-spacing:0.1em;">REVD.CLOUD</p>
+    <p style="color:rgba(255,255,255,0.7);font-size:0.8rem;margin-top:4px;">Menghubungkan...</p>
+    <div class="splash-dots">
+      <div class="splash-dot"></div>
+      <div class="splash-dot"></div>
+      <div class="splash-dot"></div>
+    </div>
+  </div>
+  <!-- End Splash Screen -->
+
     <div class="max-w-md mx-auto pb-10">
       <!-- Header -->
       <div class="bg-green-500 p-2 px-4 rounded-none md:rounded-t-lg">
@@ -41,6 +62,8 @@
             </svg>
             <span class="font-bold">REVD.CLOUD</span>
           </div>
+          <div class="flex items-center gap-2">
+          <button id="darkModeToggle" onclick="toggleDarkMode()" title="Mode Gelap"></button>
           <button
             type="button"
             class="relative inline-block mr-2"
@@ -67,6 +90,7 @@
               1
             </div>
           </button>
+          </div>
         </div>
 
         <!-- End Logo -->
@@ -121,99 +145,45 @@
         </div>
         <!-- End Jam -->
         <!-- Harga Paket -->
-        <div class="bg-white rounded-lg my-2 mb-6">
-          <!-- Harga Paket -->
-          <div class="grid grid-cols-3 divide-x-2 divide-gray-300 gap-2 p-4">
-            <!-- Harga Bronze -->
-            <div class="flex flex-col">
-              <div class="mx-2">
-                <div
-                  class="flex flex-row w-full justify-start items-center text-amber-800"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-3 w-3 mr-2"
-                  >
-                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
-                  </svg>
-                  <span class="text-xs capitalize font-medium">Bronze</span>
-                </div>
-                <h1 class="text-sm font-bold mt-1">Rp. 5000,-</h1>
-                <h4 class="text-xs text-gray-500">12 Jam</h4>
+        <div class="bg-transparent rounded-lg my-2 mb-6">
+          <div class="grid grid-cols-3 gap-2 p-2">
+            <!-- Bronze -->
+            <div class="pricing-card bronze flex flex-col">
+              <div class="flex flex-row w-full justify-start items-center text-amber-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+                <span class="text-xs capitalize font-bold">Bronze</span>
               </div>
+              <h1 class="text-sm font-bold mt-1 text-amber-900">Rp. 5.000</h1>
+              <h4 class="text-xs text-gray-500">12 Jam</h4>
+              <a href="https://wa.me/6288214672165?text=Saya%20ingin%20membeli%20paket%20Bronze%20Rp.5000%20(12%20Jam)" target="_blank" class="buy-btn bronze">Beli</a>
             </div>
-            <!-- End Harga Bronze -->
-            <!-- Harga Silver -->
-            <div class="flex flex-col">
-              <div class="mx-2">
-                <div
-                  class="flex flex-row w-full justify-start items-center text-gray-600"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-3 w-3 mr-2"
-                  >
-                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
-                  </svg>
-                  <span class="text-xs capitalize font-medium">Silver</span>
-                </div>
-                <h1 class="text-sm font-bold mt-1">Rp. 25000,-</h1>
-                <h4 class="text-xs text-gray-500">7 hari</h4>
+            <!-- Silver -->
+            <div class="pricing-card silver flex flex-col" style="margin-top:12px;">
+              <span class="popular-badge">⭐ Populer</span>
+              <div class="flex flex-row w-full justify-start items-center text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+                <span class="text-xs capitalize font-bold">Silver</span>
               </div>
+              <h1 class="text-sm font-bold mt-1 text-gray-700">Rp. 25.000</h1>
+              <h4 class="text-xs text-gray-500">7 Hari</h4>
+              <a href="https://wa.me/6288214672165?text=Saya%20ingin%20membeli%20paket%20Silver%20Rp.25000%20(7%20Hari)" target="_blank" class="buy-btn silver">Beli</a>
             </div>
-            <!-- End Harga Silver -->
-            <!-- Harga Gold -->
-            <div class="flex flex-col">
-              <div class="mx-2">
-                <div
-                  class="flex flex-row w-full justify-start items-center text-yellow-500"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-3 w-3 mr-2"
-                  >
-                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
-                  </svg>
-                  <span class="text-xs capitalize font-medium">Gold</span>
-                </div>
-                <h1 class="text-sm font-bold mt-1">Rp. 70.000,-</h1>
-                <h4 class="text-xs text-gray-500">Bulanan</h4>
+            <!-- Gold -->
+            <div class="pricing-card gold flex flex-col">
+              <div class="flex flex-row w-full justify-start items-center text-yellow-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+                <span class="text-xs capitalize font-bold">Gold</span>
               </div>
+              <h1 class="text-sm font-bold mt-1 text-yellow-700">Rp. 70.000</h1>
+              <h4 class="text-xs text-gray-500">Bulanan</h4>
+              <a href="https://wa.me/6288214672165?text=Saya%20ingin%20membeli%20paket%20Gold%20Rp.70000%20(Bulanan)" target="_blank" class="buy-btn gold">Beli</a>
             </div>
-            <!-- End Harga Gold -->
           </div>
         </div>
         <!-- End Harga Paket -->
@@ -783,6 +753,7 @@
     <script type="text/javascript" src="login_js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="login_js/main.js"></script>
     <script src="login_js/datehijri.js"></script>
+    <script type="text/javascript" src="login_js/features.js"></script>
     <script>window.MSInputMethodContext && document.documentMode && document.write('<script src="login_js/ie11CustomProperties.min.js"><\/script>');</script>
     <script>
       $("#owl-carousel").owlCarousel({
