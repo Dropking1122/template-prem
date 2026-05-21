@@ -1,21 +1,54 @@
+/* ===== BLUE COLOR OVERRIDES (replacing pre-compiled green Tailwind) ===== */
+.bg-blue-50  { background-color: #eff6ff; }
+.bg-blue-100 { background-color: #dbeafe; }
+.bg-blue-200 { background-color: #bfdbfe; }
+.bg-blue-500 { background-color: #3b82f6; }
+.bg-blue-600 { background-color: #2563eb; }
+.bg-blue-700 { background-color: #1d4ed8; }
+.bg-blue-800 { background-color: #1e40af; }
+.bg-blue-900 { background-color: #1e3a8a; }
+.bg-blue-950 { background-color: #172554; }
+
+.text-blue-500 { color: #3b82f6; }
+.text-blue-600 { color: #2563eb; }
+.text-blue-700 { color: #1d4ed8; }
+.text-blue-800 { color: #1e40af; }
+
+.border-blue-700 { border-color: #1d4ed8; }
+.divide-blue-300 > * + * { border-color: #93c5fd; }
+
+.hover\:bg-blue-500:hover { background-color: #3b82f6; }
+.hover\:bg-blue-700:hover { background-color: #1d4ed8; }
+.active\:bg-blue-900:active { background-color: #1e3a8a; }
+
+.focus\:outline-blue-500:focus { outline-color: #3b82f6; }
+.focus\:border-blue-700:focus  { border-color: #1d4ed8; }
+.focus\:shadow-outline-blue:focus { box-shadow: 0 0 0 3px rgba(37,99,235,0.3); }
+
+.bg-blue-600 { background-color: #2563eb; }
+.rounded-r-xl { border-radius: 0 0.75rem 0.75rem 0; }
+
 /* ===== DARK MODE ===== */
 [data-theme="dark"] body {
-  background-color: #1a1a2e !important;
+  background-color: #0f172a !important;
   color: #e0e0e0 !important;
 }
 [data-theme="dark"] .bg-white {
-  background-color: #16213e !important;
+  background-color: #1e293b !important;
   color: #e0e0e0 !important;
 }
 [data-theme="dark"] .bg-gray-50 {
-  background-color: #1a1a2e !important;
+  background-color: #0f172a !important;
 }
 [data-theme="dark"] .bg-gray-100 {
-  background-color: #0f3460 !important;
+  background-color: #1e3a5f !important;
   color: #e0e0e0 !important;
 }
+[data-theme="dark"] .bg-blue-100 {
+  background-color: #1e3a5f !important;
+}
 [data-theme="dark"] .bg-gray-50.px-4.py-3 {
-  background-color: #0f3460 !important;
+  background-color: #1e3a5f !important;
 }
 [data-theme="dark"] .text-gray-800 {
   color: #c9d1d9 !important;
@@ -41,6 +74,10 @@
 }
 [data-theme="dark"] .bg-gray-500 {
   background-color: #21262d !important;
+}
+[data-theme="dark"] .bg-blue-600,
+[data-theme="dark"] .bg-blue-700 {
+  background-color: #1d4ed8 !important;
 }
 
 /* ===== DARK MODE TOGGLE BUTTON ===== */
@@ -71,7 +108,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #16a34a 0%, #14532d 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 #splashScreen.hide {
@@ -161,8 +198,8 @@
 
 /* ===== COUNTDOWN TIMER ===== */
 .countdown-card {
-  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-  border: 2px solid #16a34a;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border: 2px solid #2563eb;
   border-radius: 16px;
   padding: 16px;
   margin: 12px 12px 4px;
@@ -171,8 +208,8 @@
   overflow: hidden;
 }
 [data-theme="dark"] .countdown-card {
-  background: linear-gradient(135deg,#052e16,#14532d) !important;
-  border-color: #16a34a !important;
+  background: linear-gradient(135deg,#172554,#1e3a8a) !important;
+  border-color: #2563eb !important;
 }
 .countdown-card.warning {
   background: linear-gradient(135deg,#fff7ed,#ffedd5);
@@ -190,7 +227,7 @@
   font-size: 2.4rem;
   font-weight: 800;
   letter-spacing: 0.05em;
-  color: #15803d;
+  color: #1d4ed8;
   line-height: 1;
 }
 .countdown-card.warning .countdown-display {
@@ -198,7 +235,7 @@
 }
 .countdown-label {
   font-size: 11px;
-  color: #4ade80;
+  color: #60a5fa;
   font-weight: 600;
   margin-bottom: 6px;
   text-transform: uppercase;
@@ -217,7 +254,7 @@
 .progress-bar-fill {
   height: 100%;
   border-radius: 99px;
-  background: linear-gradient(90deg, #4ade80, #16a34a);
+  background: linear-gradient(90deg, #60a5fa, #2563eb);
   transition: width 1s linear;
 }
 .countdown-card.warning .progress-bar-fill {
@@ -244,7 +281,7 @@
 }
 .wa-alert-box {
   background: white;
-  border-left: 4px solid #16a34a;
+  border-left: 4px solid #2563eb;
   border-radius: 12px;
   padding: 12px 14px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
@@ -253,7 +290,7 @@
   gap: 10px;
 }
 [data-theme="dark"] .wa-alert-box {
-  background: #16213e !important;
+  background: #1e293b !important;
   color: #e0e0e0 !important;
 }
 
@@ -287,5 +324,5 @@
   from { width: 0%; }
   to { width: var(--fill-pct); }
 }
-.usage-bar-fill.upload { background: linear-gradient(90deg,#3b82f6,#1d4ed8); }
-.usage-bar-fill.download { background: linear-gradient(90deg,#10b981,#047857); }
+.usage-bar-fill.upload   { background: linear-gradient(90deg,#60a5fa,#2563eb); }
+.usage-bar-fill.download { background: linear-gradient(90deg,#34d399,#059669); }
